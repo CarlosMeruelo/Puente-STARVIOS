@@ -1,9 +1,8 @@
-FROM node:20-bullseye
+FROM node:20-bookworm
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update --fix-missing && apt-get install -y --fix-missing \
     ffmpeg \
     xvfb \
-    pulseaudio \
     chromium \
     --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
